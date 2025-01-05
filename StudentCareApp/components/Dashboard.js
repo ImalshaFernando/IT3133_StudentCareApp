@@ -9,12 +9,15 @@ export default function Dashboard({ route, navigation }) {
   return (
 
     <View style={styles.container}>
-
+      
       <Image source={student.profile_pic} style={styles.profilePic} />
       <Text style={styles.name}>{student.name}</Text>
-      <Text>Age: {student.age}</Text>
+      <Text><b>Contact Information</b></Text><br></br>
       <Text>Email: {student.email}</Text>
-      <Text>Phone: {student.phone}</Text>
+      <Text>Phone: {student.phone}</Text><br></br>
+
+      <Text><b>Biological Information</b></Text>
+      <Text>Age: {student.age}</Text>
       <Text>Gender: {student.gender}</Text>
       <Text>Blood Group: {student.blood_group}</Text>
 
@@ -28,7 +31,7 @@ export default function Dashboard({ route, navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', padding: 20 },
+  container: { flex: 1, alignItems: 'left', padding: 20 },
   profilePic: { width: 100, height: 100, borderRadius: 50, marginBottom: 20 },
   name: { fontSize: 24, fontWeight: 'bold', marginBottom: 10 },
 });

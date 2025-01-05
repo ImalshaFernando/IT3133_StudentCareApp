@@ -12,7 +12,7 @@ export default function LoginScreen({ navigation }) {
     );
 
     if (student) {
-      navigation.navigate('Dashboard', { student }); // Navigate to dashboard
+      navigation.navigate('Dashboard', { student }); 
     } else {
       Alert.alert('Please check username or password');
     }
@@ -20,7 +20,7 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>STUDENT LOGIN</Text>
       <TextInput
         style={styles.input}
         placeholder="Username"
