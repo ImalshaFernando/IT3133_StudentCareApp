@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import { students } from '../StudentsDb'; // Import database
+import { students } from '../assets/StudentsDb';
 
 export default function LoginScreen({ navigation }) {
   const [username, setUsername] = useState('');
@@ -14,7 +14,7 @@ export default function LoginScreen({ navigation }) {
     if (student) {
       navigation.navigate('Dashboard', { student }); // Navigate to dashboard
     } else {
-      Alert.alert('Login Failed', 'Invalid username or password');
+      Alert.alert('Please check username or password');
     }
   };
 

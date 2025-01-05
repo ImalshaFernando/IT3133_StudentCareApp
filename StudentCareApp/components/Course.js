@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { courses, subjects } from '../StudentsDb';
+import { courses, subjects } from '../assets/StudentsDb';
 
 export default function CourseDetails({ route }) {
   const { courseId } = route.params;

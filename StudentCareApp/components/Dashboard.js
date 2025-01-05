@@ -1,12 +1,15 @@
-// screens/Dashboard.js
 import React from 'react';
 import { View, Text, Button, StyleSheet, Image } from 'react-native';
+//import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navigation';
+
 
 export default function Dashboard({ route, navigation }) {
   const { student } = route.params;
-
+ // const Tab = createMaterialBottomTabNavigator();
   return (
+
     <View style={styles.container}>
+
       <Image source={student.profile_pic} style={styles.profilePic} />
       <Text style={styles.name}>{student.name}</Text>
       <Text>Age: {student.age}</Text>
@@ -17,8 +20,9 @@ export default function Dashboard({ route, navigation }) {
 
       <Button
         title="View Course Details"
-        onPress={() => navigation.navigate('CourseDetails', { courseId: student.course_id })}
+        onPress={() => navigation.navigate('Course', { courseId: student.course_id })}
       />
+
     </View>
   );
 }
