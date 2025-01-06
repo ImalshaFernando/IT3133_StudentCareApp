@@ -29,7 +29,7 @@ export default function Login() {
         <View style={styles.banner}>
           <Image
             style={styles.image}
-            source={require('../assets/Logo.png')}
+            source={require('../assets/images/Logo.png')}
           />
         </View>
         <View style={styles.title}>
