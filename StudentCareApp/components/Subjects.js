@@ -5,7 +5,7 @@ import { marks } from "../assets/StudentsDb";
 import { Card } from "react-native-paper";
 
 export default function Subjects({user}){
-    const userCourse=courses.find((course) => course.id === user.course_id);
+    const userCourse=course.find((course) => course.id === user.course_id);
     const userSubjects=subjects.filter((subject)=>
         marks.some((mark)=>mark.student_id===user.id && mark.subject_id===subject.id)
     )

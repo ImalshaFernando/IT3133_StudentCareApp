@@ -15,7 +15,7 @@ export default function Main({route}){
 
   const renderScene = BottomNavigation.SceneMap({
     profile:()=> <Profile user={user}/>,
-    courses:()=> <Course user={user}/>,
+    course:()=> <Course user={user}/>,
     subjects:()=> <Subjects user={user}/>,
   });
 

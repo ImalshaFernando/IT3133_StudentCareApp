@@ -254,7 +254,7 @@ export const students = [
   }
 ];
 
-export const courses = [
+export const course = [
   {
     "id": 1,
     "name": "Computer Science",

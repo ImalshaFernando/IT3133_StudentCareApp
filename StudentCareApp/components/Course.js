@@ -1,5 +1,5 @@
 import { Image, StyleSheet, View, Text } from "react-native";
-import { course } from "../assets/StudentsDb";
+import { Course } from "../assets/StudentsDb";
 import { Card } from "react-native-paper";
 
 export default function Courses({user}){

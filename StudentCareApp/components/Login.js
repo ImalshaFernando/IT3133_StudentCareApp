@@ -19,7 +19,7 @@ export default function Login() {
       setErrorMessage(""); 
       navigation.navigate('Dashboard', { user });
     } else {
-      setErrorMessage("Invalid username or password. Please try again.");
+      setErrorMessage("Invalid username or password.Please try again.");
     }
   };
 
@@ -33,7 +33,7 @@ export default function Login() {
           />
         </View>
         <View style={styles.title}>
-          <Text variant="displayMedium" style={styles.text}>Student Login</Text>
+          <Text variant="displayMedium" style={styles.text}>STUDENT LOGIN</Text>
         </View>
         <View style={styles.inputfields}>
           <TextInput
