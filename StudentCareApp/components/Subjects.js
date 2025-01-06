@@ -1,6 +1,6 @@
 import { Image, StyleSheet, View , Text} from "react-native";
 import { subjects } from "../assets/StudentsDb";
-import { courses } from "../assets/StudentsDb";
+import { course } from "../assets/StudentsDb";
 import { marks } from "../assets/StudentsDb";
 import { Card } from "react-native-paper";
 
@@ -26,7 +26,7 @@ export default function Subjects({user}){
             <View style={styles.banner}>
                 <Image
                     style={styles.image}
-                    source={require('../assets/Logo.png')}/>
+                    source={require('../assets/images/Logo.png')}/>
             </View>
             <View style={styles.card}>
                 <Card style={{backgroundColor:"#ffffff"}}>

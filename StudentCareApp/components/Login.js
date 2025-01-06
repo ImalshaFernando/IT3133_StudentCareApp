@@ -17,7 +17,7 @@ export default function Login() {
     );
     if (user) {
       setErrorMessage(""); 
-      navigation.navigate('Main', { user });
+      navigation.navigate('Dashboard', { user });
     } else {
       setErrorMessage("Invalid username or password. Please try again.");
     }

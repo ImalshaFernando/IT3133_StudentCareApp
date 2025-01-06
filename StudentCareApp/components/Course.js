@@ -4,7 +4,7 @@ import { Card } from "react-native-paper";
 
 export default function Courses({user}){
     
-    const userCourse=courses.find((course) => course.id === user.course_id);
+    const userCourse=course.find((course) => course.id === user.course_id);
     return(
         <View style={styles.container}>
             <View style={styles.banner}>
