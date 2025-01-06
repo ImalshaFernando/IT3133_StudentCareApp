@@ -1,11 +1,9 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, Image } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Course from './Course';
+
 
 export default function Dashboard({ route, navigation }) {
   const { student } = route.params;
-  const Tab = createBottomTabNavigator();
   return (
 
     <View style={styles.container}>
@@ -25,11 +23,6 @@ export default function Dashboard({ route, navigation }) {
         title="View Course Details"
         onPress={() => navigation.navigate('Course', { courseId: student.course_id })}
       />
-    <Tab.Navigator>
-      <Tab.Screen name="Profile" component={Dashboard} />
-      <Tab.Screen name="Course" component={Course} />
-      <Tab.Screen name="Subject" component={Dashboard} />
-    </Tab.Navigator>
     </View>
   );
 }
