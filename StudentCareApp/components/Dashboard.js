@@ -1,34 +1,30 @@
-import React from 'react';
-import { View, Text, Button, StyleSheet, Image } from 'react-native';
+import * as React from 'react';
+import { BottomNavigation } from 'react-native-paper';
+import Profile from './Profile';
+import Courses from './Courses';
+import Subjects from './Subjects';
 
+export default function Main({route}){
+    const {user}=route.params;
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: 'profile', title: 'Profile', focusedIcon: 'account', unfocusedIcon: 'account-outline'},
+    { key: 'courses', title: 'Courses', focusedIcon: 'school' , unfocusedIcon: 'school-outline'},
+    { key: 'subjects', title: 'Subjects', focusedIcon: 'book-open' , unfocusedIcon: 'book-open-outline'},
+  ]);
 
-export default function Dashboard({ route, navigation }) {
-  const { student } = route.params;
+  const renderScene = BottomNavigation.SceneMap({
+    profile:()=> <Profile user={user}/>,
+    courses:()=> <Courses user={user}/>,
+    subjects:()=> <Subjects user={user}/>,
+  });
+
   return (
-
-    <View style={styles.container}>
-      
-      <Image source={student.profile_pic} style={styles.profilePic} />
-      <Text style={styles.name}>{student.name}</Text>
-      <Text><b>Contact Information</b></Text><br></br>
-      <Text>Email: {student.email}</Text>
-      <Text>Phone: {student.phone}</Text><br></br>
-
-      <Text><b>Biological Information</b></Text>
-      <Text>Age: {student.age}</Text>
-      <Text>Gender: {student.gender}</Text>
-      <Text>Blood Group: {student.blood_group}</Text>
-
-      <Button
-        title="View Course Details"
-        onPress={() => navigation.navigate('Course', { courseId: student.course_id })}
-      />
-    </View>
+    <BottomNavigation
+      navigationState={{ index, routes }}
+      onIndexChange={setIndex}
+      renderScene={renderScene}
+      keyExtractor={(item) => item.key}
+    />
   );
-}
-
-const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'left', padding: 20 },
-  profilePic: { width: 100, height: 100, borderRadius: 50, marginBottom: 20 },
-  name: { fontSize: 24, fontWeight: 'bold', marginBottom: 10 },
-});
+};
